@@ -12,7 +12,7 @@ export const addTask = async (req: Request, res: Response) => {
     try {
         const task = new Task({ title, description })
         await task.save()
-        
+
         //redisClient.del('tasks')
 
         res.status(201).json(task)
@@ -27,12 +27,29 @@ export const getTaskById = async (req: Request, res: Response, next: NextFunctio
         const task: ITask | null = await Task.findById(taskId)
 
         if (!task) {
-            return res.status(404).json({error: 'Task not found'})
+            return res.status(404).json({ error: 'Task not found' })
         }
         res.status(200).json(task)
 
     } catch (error: unknown) {
         console.log(error)
         res.status(500).json({ error: 'Error fetching task' })
+    }
+}
+
+export const updateTaskStatus = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
+    const { taskId } = req.params
+    const { title, description, status } = req.body
+
+    try {
+        const task = await Task.findByIdAndUpdate(taskId, { title: title, description: description }, { new: true })
+
+        if (!task) {
+            return res.status(404).json({ error: 'Task not found' })
+        }
+
+        res.status(200).json(task)
+    } catch (error) {
+        res.status(400).json({ error: 'Error fetching task' })
     }
 }
