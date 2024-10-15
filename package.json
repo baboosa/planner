@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^8.0.1",
     "eslint": "^9.9.0",
@@ -9,6 +10,8 @@
   "dependencies": {
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.1",
     "prettier": "^3.3.3"
   }
 }
