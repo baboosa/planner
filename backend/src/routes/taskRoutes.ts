@@ -7,7 +7,7 @@ const router = Router()
 // routes
 router.post('/tasks', validateTask, addTask)
 router.get('/tasks/:id', getTaskById)
-router.patch('/tasks/:taskId', validateTask, updateTaskStatus)
+router.patch('/tasks/:taskId', updateTaskStatus)
 router.delete('/tasks/:id', deleteTask)
 
 export default router
