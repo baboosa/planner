@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 
-export const validateTask = (req: Request, res: Response, next: NextFunction) => {
+export const validateTask = (req: any, res: any, next: NextFunction) => {
     const { title } = req.body
 
     if (!title || title.trim().length === 0) {
