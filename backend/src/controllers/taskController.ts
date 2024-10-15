@@ -53,3 +53,19 @@ export const updateTaskStatus = async (req: Request, res: Response, next: NextFu
         res.status(400).json({ error: 'Error fetching task' })
     }
 }
+
+export const deleteTask = async (req: Request, res: Response): Promise<any> => {
+    const { id } = req.params
+
+    try {
+        const task = await Task.findByIdAndDelete(id)
+
+        if (!task) {
+            return res.status(404).json({ error: 'Task not found' })
+        }
+
+        res.status(204).send()
+    } catch (error) {
+        res.status(500).json({ error: 'Error fetching task' })
+    }
+}
