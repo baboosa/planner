@@ -3,7 +3,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 export interface ITask extends Document {
     title: string
     description: string
-    completed: boolean
+    status: boolean
 }
 
 const TaskSchema: Schema = new Schema({
@@ -14,10 +14,10 @@ const TaskSchema: Schema = new Schema({
     description: {
         type: String,
     },
-    completed: {
+    status: {
         type: Boolean,
         default: false,
     },
 })
 
-export const Task = mongoose.model<ITask>('Task', TaskSchema)
+export const Task = mongoose.model<ITask>('task', TaskSchema)
