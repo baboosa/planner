@@ -39,10 +39,10 @@ export const getTaskById = async (req: Request, res: Response, next: NextFunctio
 
 export const updateTaskStatus = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
     const { taskId } = req.params
-    const { title, description, status } = req.body
+    const { status } = req.body
 
     try {
-        const task = await Task.findByIdAndUpdate(taskId, { title: title, description: description }, { new: true })
+        const task = await Task.findByIdAndUpdate(taskId, { status }, { new: true })
 
         if (!task) {
             return res.status(404).json({ error: 'Task not found' })
