@@ -25,7 +25,7 @@ app.use(sessionMiddleware) // Usar sessões
 
 
 // Rotas
-app.use('/', taskRoutes)
+app.use('/tasks', taskRoutes)
 app.use('/auth', authRoutes)
 
 app.use(express.json())
