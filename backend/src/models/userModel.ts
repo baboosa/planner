@@ -13,7 +13,7 @@ export class UserModel {
     async registerUser(email: string, password: string): Promise<IUser> {
         const existingUser = await this.userModel.findOne({ email })
         if (existingUser) {
-            throw new Error('Email já registrado.')
+            throw new Error('Email already registered')
         }
 
         const newUser = new this.userModel({ email, password })
@@ -24,12 +24,12 @@ export class UserModel {
     async loginUser(email: string, password: string): Promise<IUser> {
         const user = await this.userModel.findOne({ email })
         if (!user) {
-            throw new Error('Credenciais inválidas.')
+            throw new Error('Invalid credentials')
         }
 
         const isMatch = await user.comparePassword(password)
         if (!isMatch) {
-            throw new Error('Credenciais inválidas.')
+            throw new Error('Invalid credentials')
         }
 
         return user

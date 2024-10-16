@@ -14,9 +14,9 @@ export class AuthController {
         try {
             const user = await this.userModel.registerUser(email, password)
             req.session.id = user.id
-            return res.status(201).json({ message: 'Usuário registrado com sucesso', userId: user.id })
+            return res.status(201).json({ message: 'User registered successfully', userId: user.id })
         } catch (error) {
-            return res.status(400).json({ message: '' })
+            return res.status(400).json({ message: error })
         }
     }
 
@@ -26,9 +26,9 @@ export class AuthController {
         try {
             const user = await this.userModel.loginUser(email, password)
             req.session.id = user.id
-            return res.status(200).json({ message: 'Login bem-sucedido', id: user.id })
+            return res.status(200).json({ message: 'Login successful', id: user.id })
         } catch (error) {
-            return res.status(400).json({ message: '' })
+            return res.status(400).json({ message: error })
         }
     }
 
@@ -36,10 +36,10 @@ export class AuthController {
     public logout = (req: Request, res: Response): any => {
         req.session.destroy((err) => {
             if (err) {
-                return res.status(500).json({ message: 'Erro ao fazer logout' })
+                return res.status(500).json({ message: 'Error logging out' })
             }
             res.clearCookie('connect.sid')
-            return res.status(200).json({ message: 'Logout bem-sucedido' })
+            return res.status(200).json({ message: 'Successful logout' })
         })
     }
 }

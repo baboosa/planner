@@ -13,9 +13,9 @@ const app = express()
 
 // Conectar ao MongoDB
 mongoose.connect(process.env.MONGODB_URI || '').then(() => {
-    console.log('Conectado ao MongoDB')
+    console.log('Connected to MongoDB')
 }).catch((error) => {
-    console.error('Erro ao conectar ao MongoDB:', error)
+    console.error('Error connecting to MongoDB: ', error)
 })
 
 // Middlewares
