@@ -5,8 +5,10 @@
         "dev": "webpack -w"
     },
     "devDependencies": {
+        "@types/bcryptjs": "^2.4.6",
         "@types/cors": "^2.8.17",
         "@types/express": "^5.0.0",
+        "@types/express-session": "^1.18.0",
         "@typescript-eslint/eslint-plugin": "^8.0.1",
         "@typescript-eslint/parser": "^8.0.1",
         "eslint": "^9.9.0",
