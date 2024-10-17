@@ -1,7 +1,7 @@
 {
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon ./backend/src/server.ts",
+        "start": "nodemon ./src/server.ts",
         "dev": "webpack -w"
     },
     "devDependencies": {
@@ -9,6 +9,7 @@
         "@types/cors": "^2.8.17",
         "@types/express": "^5.0.0",
         "@types/express-session": "^1.18.0",
+        "@types/jsonwebtoken": "^9.0.7",
         "@types/react": "^18.3.11",
         "@types/react-dom": "^18.3.1",
         "@typescript-eslint/eslint-plugin": "^8.0.1",
@@ -26,6 +27,7 @@
         "eslint-plugin-prettier": "^5.2.1",
         "express": "^4.21.1",
         "express-session": "^1.18.1",
+        "jsonwebtoken": "^9.0.2",
         "mongoose": "^8.7.1",
         "nodemon": "^3.1.7",
         "prettier": "^3.3.3",
