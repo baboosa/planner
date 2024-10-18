@@ -7,8 +7,6 @@ Este projeto é uma aplicação que permite o **cadastro** e **login** de usuár
 - **Backend**: Express.js
 - **Frontend**: React
 - **Banco de Dados**: MongoDB
-- **Gerenciamento de Sessões**: Redis
-- **Autenticação**: JWT
 
 ## Pré-requisitos
 
@@ -35,7 +33,7 @@ Antes de começar, você precisará ter as seguintes ferramentas instaladas:
     cd ./frontend
     yarn install
 
-4. Crie um arquivo .env na raiz do projeto seguindo o padrão do arquivo **env.sample**
+4. Crie um arquivo .env na raiz de cada serviço seguindo o padrão do arquivo **env.sample**
 
 
 ## Como Executar o Projeto
